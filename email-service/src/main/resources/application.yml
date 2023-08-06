@@ -4,9 +4,9 @@ spring:
   application:
     name: email-service
   datasource:
-    url: jdbc:mysql://localhost:3306/<Database Name>
-    username: <your DB username>
-    password: <your DB password>
+    url: jdbc:mysql://localhost:3306/emailsDb
+    username: root
+    password: examly
   jpa:
     show-sql: true
     hibernate:
