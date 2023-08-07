@@ -3,18 +3,15 @@ server:
 
 spring:
   application:
-    name: TRANSACTION-SERVICE
+    name: policy-transaction-service
   datasource:
-    url: jdbc:mysql://localhost:3306/transactionData
+    url: jdbc:mysql://localhost:3306/trasactiondbnew
     username: root
     password: subhanAllah123@
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
 
 eureka:
   client:
