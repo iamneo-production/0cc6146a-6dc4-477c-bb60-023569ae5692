@@ -1,0 +1,18 @@
+server:
+  port: 6111
+spring:
+  application:
+    name: selection-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/selectionDB
+    username: root
+    password: subhanAllah123@
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
