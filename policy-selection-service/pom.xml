@@ -14,7 +14,7 @@
 	<name>microserevices-insurance-policy</name>
 	<description>Project for policy selection service</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.4</spring-cloud.version>
 	</properties>
 	<dependencies>
