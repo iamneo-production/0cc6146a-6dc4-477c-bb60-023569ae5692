@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.policy.selection.dto.PolicyCatalogDto;
 
-@FeignClient(name = "POLICY-SERVICE")
+@FeignClient(name = "POLICY-SERVICE", path="/policies")
 public interface ApiClient {
-    @GetMapping("/policies/{pId}")
+    @GetMapping("/{pId}")
     ResponseEntity<PolicyCatalogDto> getById(@PathVariable String pId);
 
 
