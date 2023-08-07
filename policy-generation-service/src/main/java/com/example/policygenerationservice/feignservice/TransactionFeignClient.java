@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "TRANSACTION-SERVICE")
+@FeignClient(name = "POLICY-TRANSACTION-SERVICE", path="/payments")
 public interface TransactionFeignClient {
     @GetMapping("/getById/{id}")
     public ResponseEntity<TransactionDto> getTransactionById(@PathVariable("id") String transactionId);

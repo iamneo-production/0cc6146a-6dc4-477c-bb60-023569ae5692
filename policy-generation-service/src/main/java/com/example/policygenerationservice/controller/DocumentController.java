@@ -20,20 +20,23 @@ public class DocumentController {
 
     private final PolicyDocumentService policyDocumentService;
 
-    @CircuitBreaker(name = "policyDocumentCircuitBreaker", fallbackMethod="policyDocumentFallBack")
+    //@CircuitBreaker(name = "policyDocumentCircuitBreaker", fallbackMethod = "policyDocumentFallBack")
     @PostMapping("/{id}")
-    public ResponseEntity<DocumentResponseDto> generatePolicyDocument(@RequestBody @Valid PolicyDocument policyDocument, @PathVariable ("id") String transactionId) {
+    public ResponseEntity<DocumentResponseDto> generatePolicyDocument(@RequestBody @Valid PolicyDocument policyDocument, @PathVariable("id") String transactionId) {
         return new ResponseEntity<DocumentResponseDto>(policyDocumentService.generateDocument(policyDocument, transactionId), HttpStatus.CREATED);
     }
-    public ResponseEntity<DocumentResponseDto> policyDocumentFallBack(PolicyDocument policyDocument, String transactionId, Exception e) {
+
+   /* public ResponseEntity<DocumentResponseDto> policyDocumentFallBack(PolicyDocument policyDocument, String transactionId, Exception e) {
         return new ResponseEntity<>(DocumentResponseDto.builder()
                 .documentId("dummy document id")
                 .build(), HttpStatus.BAD_REQUEST);
-    }
+    }*/
+
     @GetMapping("/getById/{id}")
-    public ResponseEntity<PolicyDocumentDto> getPolicyDocumentById(@PathVariable ("id") String documentId) {
+    public ResponseEntity<PolicyDocumentDto> getPolicyDocumentById(@PathVariable("id") String documentId) {
         return ResponseEntity.ok(policyDocumentService.getPolicyDocumentById(documentId));
     }
+
     @GetMapping("/")
     public ResponseEntity<List<PolicyDocumentDto>> getAll() {
         return ResponseEntity.ok(policyDocumentService.getAll());

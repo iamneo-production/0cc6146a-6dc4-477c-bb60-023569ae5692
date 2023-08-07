@@ -65,7 +65,7 @@ public class PolicyDocumentServiceImpl implements PolicyDocumentService {
     @Override
     public PolicyDocumentDto getPolicyDocumentById(String documentId) {
         log.info("Inside getPolicyDocumentById");
-        return mapToDto(policyDocumentRepository.findById(documentId).orElseThrow(()-> new GlobalExceptionHandler(
+        return mapToDto(policyDocumentRepository.findById(documentId).orElseThrow(() -> new GlobalExceptionHandler(
                 String.format("Policy document not found with the id: %s", documentId)
         )));
     }
@@ -78,6 +78,7 @@ public class PolicyDocumentServiceImpl implements PolicyDocumentService {
                 .map(this::mapToDto)
                 .collect(Collectors.toList());
     }
+
     private PolicyDocumentDto mapToDto(PolicyDocument policyDocument) {
         return PolicyDocumentDto.builder()
                 .documentId(policyDocument.getDocumentId())

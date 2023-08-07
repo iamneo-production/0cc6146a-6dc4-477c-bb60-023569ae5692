@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "EMAIL-SERVICE", path = "/notifications/email")
+@FeignClient(name = "POLICY-EMAIL-SERVICE", path = "/notifications/email")
 public interface EmailFeignClient {
     @PostMapping("/{id}")
-    public ResponseEntity<EmailRequestDto> createEmail(@RequestBody EmailRequest emailRequest, @PathVariable("id") String documentId);
+     ResponseEntity<EmailRequestDto> createEmail(@RequestBody EmailRequest emailRequest, @PathVariable("id") String documentId);
 }

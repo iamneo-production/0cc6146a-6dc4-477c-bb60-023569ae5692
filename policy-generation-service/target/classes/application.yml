@@ -2,9 +2,9 @@ server:
   port: 3122
 spring:
   application:
-    name: generation-service
+    name: policy-generation-service
   datasource:
-    url: jdbc:mysql://localhost:3306/documentDb
+    url: jdbc:mysql://localhost:3306/documentdb
     username: root
     password: subhanAllah123@
   jpa:

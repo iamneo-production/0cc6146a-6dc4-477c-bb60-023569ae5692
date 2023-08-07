@@ -2,11 +2,11 @@ server:
   port: 3122
 spring:
   application:
-    name: generation-service
+    name: policy-generation-service
   datasource:
-    url: jdbc:mysql://localhost:3306/<Database Name>
-    username: <your DB username>
-    password: <your DB password>
+    url: jdbc:mysql://localhost:3306/<database name>
+    username: root
+    password: examly
   jpa:
     show-sql: true
     hibernate:
