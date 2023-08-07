@@ -2,9 +2,9 @@ server:
   port: 4111
 spring:
   application:
-    name: email-service
+    name: policy-email-service
   datasource:
-    url: jdbc:mysql://localhost:3306/emailsDb
+    url: jdbc:mysql://localhost:3306/emailsdb
     username: root
     password: subhanAllah123@
   jpa:
